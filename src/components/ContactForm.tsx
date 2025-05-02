@@ -1,6 +1,7 @@
 
 import React, { useState, useRef } from 'react';
 import { useToast } from '@/components/ui/use-toast';
+import emailjs from '@emailjs/browser'; // <-- EmailJS import
 
 const ContactForm: React.FC = () => {
   const { toast } = useToast();
@@ -18,29 +19,39 @@ const ContactForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      await emailjs.sendForm(
+        'service_o4qjp3p',           // Your EmailJS service ID
+        'template_wt2t0kg',          // Your EmailJS template ID
+        formRef.current!,            // Form reference
+        'oytcd4ygqtFnjqgB-'          // Your EmailJS public key
+      );
+
       toast({
         title: "Message sent!",
         description: "Thank you for your inquiry. I'll get back to you soon.",
       });
-      
-      // Reset form
-      if (formRef.current) {
-        formRef.current.reset();
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          message: '',
-        });
-      }
-    }, 1500);
+
+      formRef.current?.reset();
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -55,7 +66,7 @@ const ContactForm: React.FC = () => {
           }}
         ></div>
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -66,7 +77,7 @@ const ContactForm: React.FC = () => {
               Have a project in mind or need technical assistance? Fill out the form below and I'll get back to you as soon as possible.
             </p>
           </div>
-          
+
           <div className="bg-white rounded-xl shadow-xl p-6 md:p-10">
             <form ref={formRef} onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6 mb-6">
@@ -101,7 +112,7 @@ const ContactForm: React.FC = () => {
                   />
                 </div>
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="phone" className="block text-lwrnavy font-medium mb-2">
                   Phone Number (Optional)
@@ -116,7 +127,7 @@ const ContactForm: React.FC = () => {
                   onChange={handleChange}
                 />
               </div>
-              
+
               <div className="mb-6">
                 <label htmlFor="message" className="block text-lwrnavy font-medium mb-2">
                   Your Message
@@ -132,7 +143,7 @@ const ContactForm: React.FC = () => {
                   onChange={handleChange}
                 ></textarea>
               </div>
-              
+
               <div>
                 <button
                   type="submit"
@@ -146,7 +157,7 @@ const ContactForm: React.FC = () => {
               </div>
             </form>
           </div>
-          
+
           <div className="mt-12 grid sm:grid-cols-3 gap-6 text-center">
             <div className="p-6">
               <div className="mx-auto bg-white/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
@@ -158,7 +169,7 @@ const ContactForm: React.FC = () => {
               <h3 className="text-white font-medium mb-1">Location</h3>
               <p className="text-white/70">Auckland, New Zealand</p>
             </div>
-            
+
             <div className="p-6">
               <div className="mx-auto bg-white/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-lwrgold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -168,7 +179,7 @@ const ContactForm: React.FC = () => {
               <h3 className="text-white font-medium mb-1">Email</h3>
               <p className="text-white/70">conor@localwebrefresh.co.nz</p>
             </div>
-            
+
             <div className="p-6">
               <div className="mx-auto bg-white/10 w-12 h-12 rounded-full flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-lwrgold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -186,3 +197,4 @@ const ContactForm: React.FC = () => {
 };
 
 export default ContactForm;
+
