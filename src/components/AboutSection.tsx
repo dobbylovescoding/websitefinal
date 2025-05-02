@@ -40,14 +40,23 @@ const AboutSection: React.FC = () => {
               About <span className="text-lwrgold">Me</span>
             </h2>
             <p className="text-white/80 max-w-2xl mx-auto">
-              After serving 10 years in the Air Force, I transitioned into full-time software development, 
-              bringing the same dedication and attention to detail to my work in the tech industry.
+            Hi, I'm Conor, an Auckland-based website designer and tech advisor. After 
+            10 years working as a Logistics Specialist in the Air Force, I decided it was 
+            time for a career change. I left the military and fully immersed myself in 
+            the tech industry, where I've spent the past 3 years studying and working
+            as a technical specialist for a company that builds innovative apps and 
+            websites for influencers in the fitness and nutrition space.
             </p>
+            <br />
             <p className="text-white/80 max-w-2xl mx-auto">
-              For the past two years, I've been advising a software company specializing in websites and 
-              apps for influencers in the fitness and nutrition space. I also work with a national sports 
-              federation, providing comprehensive web solutions, filming at events, and managing social 
-              media content.
+            In addition to my work in tech, I also collaborate with a national sports 
+            federation, providing web solutions, filming events, and managing their 
+            social media content. My diverse experience allows me to offer trusted, 
+            comprehensive digital solutions tailored to your needs.
+            </p>
+            <br />
+            <p className="text-white/80 max-w-2xl mx-auto">
+            Let’s connect and see how I can help bring your vision to life!
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex items-center mb-2">
