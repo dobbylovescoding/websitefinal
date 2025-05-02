@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Logo from './Logo';
 import { cn } from '@/lib/utils';
+import { Menu, X } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,6 +21,18 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Prevent scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
 
   return (
     <nav 
@@ -42,59 +56,65 @@ const Navbar: React.FC = () => {
             Get in Touch
           </a>
         </div>
-        
+
         {/* Mobile menu button */}
-        <button 
-          className="md:hidden text-white" 
+<Button 
+          variant="ghost"
+          className="md:hidden text-lwrlightgray hover:bg-lwrnavy/20" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <X className="h-6 w-6" />
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            <Menu className="h-6 w-6" />
           )}
-        </button>
+        </Button>
       </div>
       
-      {/* Mobile Navigation */}
+      {/* Full-screen Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-lwrnavy shadow-lg absolute w-full">
-          <div className="flex flex-col px-4 py-2 space-y-4">
+        <div className="md:hidden fixed inset-0 bg-lwrnavy z-50 flex flex-col justify-center items-center">
+          <div className="absolute top-4 right-4">
+            <Button 
+              variant="ghost"
+              className="text-lwrlightgray hover:bg-lwrnavy/20" 
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
+          <div className="flex flex-col items-center space-y-8 p-8">
             <a 
               href="#home" 
-              className="text-white py-2 hover:text-lwrgold transition-colors"
+              className="text-lwrlightgray hover:text-lwrprimary transition-colors text-xl font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </a>
             <a 
               href="#about" 
-              className="text-white py-2 hover:text-lwrgold transition-colors"
+              className="text-lwrlightgray hover:text-lwrprimary transition-colors text-xl font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
             </a>
             <a 
               href="#services" 
-              className="text-white py-2 hover:text-lwrgold transition-colors"
+              className="text-lwrlightgray hover:text-lwrprimary transition-colors text-xl font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Services
             </a>
             <a 
               href="#skills" 
-              className="text-white py-2 hover:text-lwrgold transition-colors"
+              className="text-lwrlightgray hover:text-lwrprimary transition-colors text-xl font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Skills
             </a>
             <a 
               href="#contact" 
-              className="bg-lwrgold text-lwrnavy px-4 py-2 rounded-md hover:bg-lwrgold-light transition-colors inline-block font-medium"
+               className="bg-lwrprimary text-lwrnavy px-6 py-3 rounded-md hover:bg-lwrsecondary transition-colors text-xl font-medium mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
               Get in Touch
