@@ -77,7 +77,7 @@ const AboutSection: React.FC = () => {
               <div className="absolute -top-4 -left-4 w-64 h-64 bg-lwrgold/20 rounded-lg -z-10"></div>
               <div className="h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" 
+                  src="//s3-us-west-1.amazonaws.com/s3b-usw-1-production/175/1195/file-01968fcde975789ebc9796eb1fc204b3-big.jpeg" 
                   alt="Profile" 
                   className="w-full h-full object-cover"
                 />
