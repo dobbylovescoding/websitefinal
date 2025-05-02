@@ -1,5 +1,6 @@
 
 import { useEffect } from 'react';
+import { useIsMobile } from '@/hooks/use-mobile';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import AboutSection from '@/components/AboutSection';
@@ -9,6 +10,8 @@ import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 
 const Index = () => {
+  const isMobile = useIsMobile();
+  
   useEffect(() => {
     // Set title and meta description for SEO
     document.title = "Local Web Refresh | Professional Web Solutions in Auckland";
