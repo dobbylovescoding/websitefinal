@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
             </a>
             <a
               href="#contact"
-              className="bg-lwrprimary text-lwrnavy px-6 py-3 rounded-md hover:bg-lwrsecondary transition-colors text-xl font-medium mt-4"
+              className="text-lwrlightgray hover:text-lwrprimary transition-colors text-xl font-medium"
               onClick={() => setMobileMenuOpen(false)}
             >
               Get in Touch
