@@ -10,8 +10,7 @@ const Footer: React.FC = () => {
           <div className="mb-6 md:mb-0">
             <Logo />
             <p className="mt-4 text-white/70 max-w-md">
-              Professional web solutions and tech advice for local businesses in Auckland. 
-              Transparent pricing with a personal touch.
+            Expert web solutions and tech advice for small businesses in Auckland and across New Zealand.
             </p>
           </div>
           

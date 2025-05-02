@@ -123,7 +123,7 @@ const ServicesSection: React.FC = () => {
               </svg>
             }
             title="Website Development"
-            description="Custom website design and development from scratch, tailored to your business needs and brand identity."
+            description="Custom website design and development, tailored to your business needs and brand identity."
             delay={0.1}
           />
           
@@ -179,7 +179,7 @@ const ServicesSection: React.FC = () => {
               </svg>
             }
             title="Local Support"
-            description="Free in-person or phone consultations for businesses in North, West, and Central Auckland."
+            description="Free phone consultation and website health check for businesses in North, West, and Central Auckland."
             delay={0.6}
           />
         </div>

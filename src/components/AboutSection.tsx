@@ -58,6 +58,7 @@ const AboutSection: React.FC = () => {
             <p className="text-white/80 max-w-2xl mx-auto">
             Let’s connect and see how I can help bring your vision to life!
             </p>
+            <br />
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="flex items-center mb-2">
                 <div className="h-10 w-10 rounded-full bg-lwrnavy flex items-center justify-center">

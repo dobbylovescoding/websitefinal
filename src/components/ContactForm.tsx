@@ -187,7 +187,7 @@ const ContactForm: React.FC = () => {
                 </svg>
               </div>
               <h3 className="text-white font-medium mb-1">Service Areas</h3>
-              <p className="text-white/70">North, West, and Central Auckland</p>
+              <p className="text-white/70">All of New Zealand!</p>
             </div>
           </div>
         </div>
