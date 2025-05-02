@@ -84,7 +84,7 @@ const AboutSection: React.FC = () => {
           >
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-64 h-64 bg-lwrgold/20 rounded-lg -z-10"></div>
-              <div className="relative w-full aspect-w-1 aspect-h-1">
+              <div className="relative w-[40vw] h-[40vw]">
                 <img 
                   src="//s3-us-west-1.amazonaws.com/s3b-usw-1-production/175/1195/file-01968fcde975789ebc9796eb1fc204b3-big.jpeg" 
                   alt="Profile" 
