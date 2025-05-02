@@ -22,17 +22,21 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent scrolling when mobile menu is open
   useEffect(() => {
+  const handleScroll = () => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
+      setMobileMenuOpen(false);
     }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [mobileMenuOpen]);
+  };
+
+  if (mobileMenuOpen) {
+    window.addEventListener('scroll', handleScroll);
+  }
+
+  return () => {
+    window.removeEventListener('scroll', handleScroll);
+  };
+}, [mobileMenuOpen]);
 
   return (
     <nav 
