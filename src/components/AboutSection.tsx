@@ -32,18 +32,16 @@ const AboutSection: React.FC = () => {
       
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div 
-            ref={contentRef} 
-            className="animate-on-scroll order-2 md:order-1"
-          >
-            <h2 className="text-lwrnavy text-3xl md:text-4xl font-bold mb-6">
+          {/* Content Section */}
+          <div ref={contentRef} className="animate-on-scroll order-2 md:order-1">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               About <span className="text-lwrgold">Me</span>
             </h2>
-            <p className="text-gray-700 mb-6">
+            <p className="text-white/80 max-w-2xl mx-auto">
               After serving 10 years in the Air Force, I transitioned into full-time software development, 
               bringing the same dedication and attention to detail to my work in the tech industry.
             </p>
-            <p className="text-gray-700 mb-6">
+            <p className="text-white/80 max-w-2xl mx-auto">
               For the past two years, I've been advising a software company specializing in websites and 
               apps for influencers in the fitness and nutrition space. I also work with a national sports 
               federation, providing comprehensive web solutions, filming at events, and managing social 
@@ -56,7 +54,7 @@ const AboutSection: React.FC = () => {
                     <path fillRule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <p className="ml-4 text-gray-700 font-medium">Local Auckland Service</p>
+                <p className="text-white/80 max-w-2xl mx-auto">Local Auckland Service</p>
               </div>
               <div className="flex items-center mb-2">
                 <div className="h-10 w-10 rounded-full bg-lwrnavy flex items-center justify-center">
@@ -64,18 +62,17 @@ const AboutSection: React.FC = () => {
                     <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                 </div>
-                <p className="ml-4 text-gray-700 font-medium">10+ Years Experience</p>
+                <p className="text-white/80 max-w-2xl mx-auto">10+ Years Experience</p>
               </div>
             </div>
           </div>
           
-          <div 
-            ref={imageRef} 
-            className="animate-on-scroll order-1 md:order-2"
-          >
+          {/* Image Section */}
+          <div ref={imageRef} className="animate-on-scroll order-1 md:order-2">
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-64 h-64 bg-lwrgold/20 rounded-lg -z-10"></div>
-              <div className="h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
+              {/* Container for the image */}
+              <div className="w-[40vmin] h-[40vmin] md:w-[30vmin] md:h-[30vmin] rounded-full overflow-hidden shadow-xl mx-auto">
                 <img 
                   src="//s3-us-west-1.amazonaws.com/s3b-usw-1-production/175/1195/file-01968fcde975789ebc9796eb1fc204b3-big.jpeg" 
                   alt="Profile" 
@@ -92,3 +89,4 @@ const AboutSection: React.FC = () => {
 };
 
 export default AboutSection;
+
