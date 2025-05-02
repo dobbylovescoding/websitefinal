@@ -71,7 +71,7 @@ const Navbar: React.FC = () => {
 
       {/* Full-screen Mobile Navigation - moved outside <nav> */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 bg-lwrnavy z-50 flex flex-col justify-center items-center">
+        <div className="md:hidden fixed inset-0 bg-lwrnavy z-50 overflow-y-auto flex flex-col items-center pt-24 pb-12 px-6">
           <div className="absolute top-4 right-4">
             <Button
               variant="ghost"
