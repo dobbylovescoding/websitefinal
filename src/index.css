@@ -1,0 +1,148 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 18% 20%;
+    --foreground: 209 2% 78%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 206 19% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 206 19% 16%;
+
+    --primary: 181 97% 69%;
+    --primary-foreground: 226 33% 5%;
+
+    --secondary: 181 55% 45%;
+    --secondary-foreground: 209 2% 78%;
+
+    --muted: 209 2% 78%;
+    --muted-foreground: 225 18% 20%;
+
+    --accent: 181 97% 69%;
+    --accent-foreground: 226 33% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 209 2% 78%;
+    --input: 209 2% 78%;
+    --ring: 181 97% 69%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 226 33% 5%;
+    --foreground: 209 2% 78%;
+
+    --card: 226 33% 5%;
+    --card-foreground: 209 2% 78%;
+
+    --popover: 226 33% 5%;
+    --popover-foreground: 209 2% 78%;
+
+    --primary: 181 97% 69%;
+    --primary-foreground: 226 33% 5%;
+
+    --secondary: 225 18% 20%;
+    --secondary-foreground: 209 2% 78%;
+
+    --muted: 225 18% 20%;
+    --muted-foreground: 209 2% 78%;
+
+    --accent: 181 55% 45%;
+    --accent-foreground: 209 2% 78%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 209 2% 78%;
+
+    --border: 225 18% 20%;
+    --input: 225 18% 20%;
+    --ring: 181 97% 69%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .parallax {
+    @apply relative overflow-hidden;
+  }
+  
+  .parallax-bg {
+    @apply absolute top-0 left-0 w-full h-[120%] -z-10 object-cover;
+    will-change: transform;
+  }
+  
+  .parallax-content {
+    @apply relative z-10;
+  }
+
+  .transition-transform {
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 700ms;
+  }
+
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .animate-on-scroll.animated {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .reveal-container {
+    @apply overflow-hidden relative;
+  }
+
+  .reveal-item {
+    @apply transform transition-all duration-1000;
+    transform: translateY(100%);
+  }
+
+  .reveal-item.revealed {
+    transform: translateY(0);
+  }
+}
