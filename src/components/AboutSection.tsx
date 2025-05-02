@@ -32,8 +32,10 @@ const AboutSection: React.FC = () => {
       
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center">
-          {/* Content Section */}
-          <div ref={contentRef} className="animate-on-scroll order-2 md:order-1">
+          <div 
+            ref={contentRef} 
+            className="animate-on-scroll order-2 md:order-1"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               About <span className="text-lwrgold">Me</span>
             </h2>
@@ -67,12 +69,13 @@ const AboutSection: React.FC = () => {
             </div>
           </div>
           
-          {/* Image Section */}
-          <div ref={imageRef} className="animate-on-scroll order-1 md:order-2">
+          <div 
+            ref={imageRef} 
+            className="animate-on-scroll order-1 md:order-2"
+          >
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-64 h-64 bg-lwrgold/20 rounded-lg -z-10"></div>
-              {/* Container for the image */}
-              <div className="w-[40vmin] h-[40vmin] md:w-[30vmin] md:h-[30vmin] rounded-full overflow-hidden shadow-xl mx-auto">
+              <div className="h-80 md:h-96 rounded-lg overflow-hidden shadow-xl">
                 <img 
                   src="//s3-us-west-1.amazonaws.com/s3b-usw-1-production/175/1195/file-01968fcde975789ebc9796eb1fc204b3-big.jpeg" 
                   alt="Profile" 
