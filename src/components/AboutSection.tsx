@@ -91,7 +91,7 @@ const AboutSection: React.FC = () => {
                   className="w-full h-full object-cover rounded-lg"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 w-40 h-40 bg-lwrgold-light/20 rounded-lg -z-10"></div>
+              <div className="absolute -bottom-4 -right-4 w-64 h-64 bg-lwrgold-light/20 rounded-lg -z-10"></div>
             </div>
           </div>
         </div>
