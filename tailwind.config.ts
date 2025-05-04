@@ -159,6 +159,29 @@ export default {
 				"parallax-fast": {
 					"0%": { transform: "translateY(0)" },
 					"100%": { transform: "translateY(-30%)" }
+				},
+				// NEW animations
+				typing: {
+					from: { width: "0" },
+					to: { width: "100%" }
+				},
+				blink: {
+					"0%, 100%": { borderColor: "transparent" },
+					"50%": { borderColor: "black" }
+				},
+				wiggle: {
+					"0%, 100%": { transform: "rotate(-3deg)" },
+					"50%": { transform: "rotate(3deg)" }
+				},
+				pop: {
+					"0%": {
+						opacity: "0",
+						transform: "scale(0.8) translateY(10px)"
+					},
+					"100%": {
+						opacity: "1",
+						transform: "scale(1) translateY(0)"
+					}
 				}
 			},
 			animation: {
@@ -169,6 +192,10 @@ export default {
 				"slide-up": "slide-up 0.7s ease-out forwards",
 				"slide-down": "slide-down 0.7s ease-out forwards",
 				"zoom-in": "zoom-in 0.5s ease-out forwards",
+				// NEW animations
+				"typing": "typing 2s steps(22) forwards, blink 0.7s step-end infinite",
+				"wiggle": "wiggle 0.5s ease-in-out infinite",
+				"pop": "pop 0.3s ease-out forwards"
 			}
 		}
 	},

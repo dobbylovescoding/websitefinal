@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
               <span className="text-lwrgold">Digital</span> Presence
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl animate-fade-in opacity-0" style={{animationDelay: '0.5s'}}>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl animate-typing opacity-0" style={{animationDelay: '0.5s'}}>
           Expert web solutions and tech advice for small businesses in Auckland and across New Zealand.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0" style={{animationDelay: '0.8s'}}>
