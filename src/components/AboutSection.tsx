@@ -26,9 +26,39 @@ const AboutSection: React.FC = () => {
     };
   }, []);
 
+  const parallaxRef = useRef<HTMLDivElement>(null);
+    
+    useEffect(() => {
+      const handleScroll = () => {
+        if (!parallaxRef.current) return;
+        const scrollPosition = window.scrollY;
+        const element = parallaxRef.current;
+        const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+        const offset = scrollPosition - elementPosition;
+        
+        if (offset > -window.innerHeight && offset < window.innerHeight) {
+          const parallaxRate = offset * 0.1;
+          element.style.transform = `translateY(${parallaxRate}px)`;
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
   return (
     <section id="about" className="py-20 lg:py-32 relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-gray-100 -z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full">
+        <div 
+          ref={parallaxRef}
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1920&q=80')`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
+        ></div>
+      </div>
       
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-10 items-center">
