@@ -90,7 +90,15 @@ const ServicesSection: React.FC = () => {
   return (
     <section id="services" className="py-20 lg:py-32 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-gray-100 -z-10"></div>
+      <div 
+          ref={parallaxRef}
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1920&q=80')`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+          }}
+        ></div>
         <div className="absolute inset-0 bg-lwrnavy/90"></div>
       </div>
       
