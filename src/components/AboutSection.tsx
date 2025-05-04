@@ -84,7 +84,15 @@ const AboutSection: React.FC = () => {
             className="animate-on-scroll order-1 md:order-2"
           >
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-64 h-64 bg-lwrgold/20 rounded-lg -z-10"></div>
+            <div className="absolute top-0 left-0 w-full h-full -z-10">
+  <div
+    className="w-full h-full bg-cover bg-center"
+    style={{
+      backgroundImage: `url('https://images.unsplash.com/photo-1500673922987-e212871fec22?auto=format&fit=crop&w=1920&q=80')`,
+    }}
+  />
+  <div className="absolute inset-0 bg-lwrnavy/90" />
+</div>
               <div className="relative w-[40vw] h-[40vw]">
                 <img 
                   src="//s3-us-west-1.amazonaws.com/s3b-usw-1-production/175/1195/file-01968fcde975789ebc9796eb1fc204b3-big.jpeg" 
