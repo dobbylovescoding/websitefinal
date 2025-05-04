@@ -90,7 +90,9 @@ const ServicesSection: React.FC = () => {
   return (
     <section id="services" className="py-20 lg:py-32 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full">
-      <div 
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-white to-gray-100 -z-10"></div>
+      {/* commenting out below until I figure out how to get is working on the about page. */}
+      {/* <div 
           ref={parallaxRef}
           className="absolute top-0 left-0 w-full h-full"
           style={{
@@ -98,7 +100,7 @@ const ServicesSection: React.FC = () => {
             backgroundPosition: 'center',
             backgroundSize: 'cover',
           }}
-        ></div>
+        ></div> */}
         <div className="absolute inset-0 bg-lwrnavy/90"></div>
       </div>
       
