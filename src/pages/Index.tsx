@@ -47,8 +47,8 @@ const Index = () => {
     <div className="min-h-screen overflow-hidden bg-lwrnavy">
       <Navbar />
       <Hero />
-      <AboutSection />
       <ServicesSection />
+      <AboutSection />
       <SkillsSection />
       <ContactForm />
       <Footer />
